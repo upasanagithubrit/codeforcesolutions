@@ -1,0 +1,27 @@
+#include <iostream>
+#include<string.h>
+using namespace std;
+ 
+int main()
+{
+    int n;
+    cin>>n;
+    while(n)
+    {
+   string str;
+   cin>>str;
+   
+   int s=str.length();
+   if(s<=10)
+   {
+       cout<<str<<endl;
+   }
+   else
+   {
+      cout<<str[0]<<s-2<<str[s-1]<<endl;
+   }
+   n--;
+   
+    }
+    return 0;
+}
