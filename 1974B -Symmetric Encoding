@@ -1,0 +1,39 @@
+#include <iostream>
+#include <set>
+#include <map>
+#include <vector>
+ 
+using namespace std;
+ 
+int main() {
+    int test;
+    cin >> test;
+    
+    while (test--) {
+        int n;
+        string str;
+        cin >> n;
+        cin >> str;
+ 
+        set<char> st;
+        for (int i = 0; i < n; i++) {
+            st.insert(str[i]);
+        }
+        
+        int len = st.size();
+        map<char, char> mp;
+        vector<char> chars(st.begin(), st.end());
+        
+        for (int i = 0; i < len; i++) {
+            mp[chars[i]] = chars[len - i - 1];
+        }
+        
+        for (int i = 0; i < n; i++) {
+            str[i] = mp[str[i]];
+        }
+        
+        cout << str << endl;
+    }
+    
+    return 0;
+}
